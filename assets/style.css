@@ -419,3 +419,454 @@ footer{
 
 
 
+/*utilisateurr*/
+.first{
+background-image: url("../assets/images/background/2150708122.jpg");
+
+    background-size: cover;
+
+    display: grid;
+    grid-template-rows: 7vh 93vh;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: lighter;
+width: 100vw;
+}
+.body_user{
+    display: grid;
+    grid-template-rows: repeat(4,minmax(500px,auto));
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: lighter;
+background-color: rgb(240, 240, 240);
+}
+.contains_user{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    color: aliceblue;
+    font-size: 40px;   
+    width: 100vw; 
+}
+.contains_user div{
+    display: flex;
+    flex-direction: column;
+    /* margin-right:3cm; */
+    animation-name: show;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+
+}
+@keyframes show {
+0%{
+    margin-right: -35%;
+    position: fixed;
+}
+50%{
+    position: absolute;
+}  
+    100%{
+        opacity: 1;
+        margin-right:3cm;
+    }
+}
+.header_user{
+    display: grid;
+    grid-template-columns:30vw 36vw 31vw 2vw;
+    /* justify-content: center; */
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    
+}
+.header_user a{
+    color: rgb(46, 46, 46);
+}
+.header_user a:hover{
+    border-bottom: 1px solid rgb(44, 44, 44);
+    animation-name: scale;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+
+}
+@keyframes scale{
+    100%{
+        transform: scale(1.2);
+    }
+}
+
+a{
+    text-decoration: none;
+}
+.logo_user{
+    color: rgb(9, 107, 83);
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+.header_user nav ul{
+    display: flex;
+    flex-direction: row;
+    gap: 1cm;
+    justify-content: center;
+    /* justify-content: space-around; */
+}
+.header_user nav ul li{
+    list-style: none;
+    font-size: 20px;
+    font-weight: normal;
+    
+}
+.header_user nav ul li:hover{
+    animation-name: scale;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.userInfo
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1cm;
+    height: 100%;
+}
+.userInfo li{
+    list-style: none;
+}
+.user_profil{
+    width: 1cm;
+    height: 1cm;
+    overflow: cover;
+    border-radius: 50%;
+}
+#theList #title{
+    color: rgb(39, 39, 39);
+    font-size: 30px;
+    font-weight: normal;
+    width: 100%;
+    padding: 0.5cm;
+    background-color: white;
+}
+#theList{
+    width: 70vw;
+    /* background-color: rgb(255, 255, 255); */
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5cm;
+    margin:0.5cm;
+}
+#theList .list{
+    width: 100%;
+    background-color: white;
+    max-height:10cm ;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0.5cm;
+    gap: 0.5cm;
+}
+#Element{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(216, 216, 216);
+    width: 18%;
+}
+#element img{
+    width:90%;
+    align-self: center;
+    overflow: cover;
+}
+#Ceuillete{
+    background-color: rgb(255, 255, 255);
+    height: auto;
+    width: 70%;
+    
+    justify-self: center;
+    /* padding: 3cm; */
+    display: flex;
+    flex-direction: row;
+    gap: 1cm;
+    margin: 1cm;
+}
+#Ceuillete img{
+    width:50%;
+    overflow: cover;
+    box-shadow: -1cm -1cm 0 rgb(12, 75, 59);
+}
+
+#Ceuillete div{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 2cm;
+    border-top: 3px solid rgb(51, 51, 51);
+    }
+    #Ceuillete form{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    /* gap: 0.5cm; */
+    /* background-color: aliceblue; */
+    font-size: large;
+}
+#Ceuillete p{
+    color: rgb(54, 54, 54);
+    font-size: 20px;
+    font-weight: 600;
+}
+#Ceuillete select {
+    width: 100%;
+    border-style: none;
+    border-radius: 5px;
+    background-color: rgb(211, 211, 211);
+    height: 1cm;
+    font-size: large;
+}
+#Ceuillete input[type="date"] , input[type="double"] {
+    width: 100%;
+    
+    border-style: none;
+    border-radius: 5px;
+    background-color: rgb(211, 211, 211);
+    height: 1cm;
+    font-size: large;
+}
+#Ceuillete input[type="submit"]{
+    width: 60%;
+    border-style: none;
+    border-radius: 5px;
+    background-color: rgb(6, 63, 51);
+    height: 0.75cm;
+    color: aliceblue;
+    margin-top: 0.5cm;
+    align-self: center;
+}
+#Ceuillete input[type="submit"]:hover{
+    animation-name: hover;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes hover{
+    0%{
+
+    }
+    100%{
+    background-color: rgb(211, 211, 211);
+    color: rgb(6, 63, 51) ;
+    transform: scale(1.1);
+    }
+}
+
+
+
+
+
+
+
+
+#Depenses{
+    /* background-color: aqua; */
+    height: auto;
+    width: 70%;
+    background-color: white;
+    justify-self: center;
+    /* padding: 3cm; */
+    display: flex;
+    flex-direction: row;
+    gap: 1cm;
+    margin: 2cm;
+}
+#Depenses img{
+    width:50%;
+    overflow: cover;
+    box-shadow: 1cm 1cm 0 rgb(15, 233, 204);
+
+}
+#Depenses div{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 2cm;
+    border-top: 3px solid rgb(51, 51, 51);
+
+}
+#Depenses form{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    /* gap: 0.5cm; */
+    /* background-color: aliceblue; */
+    font-size: large;
+}
+#Depenses p{
+    color: rgb(54, 54, 54);
+    font-size: 20px;
+    font-weight: 600;
+}
+#Depenses select {
+    width: 100%;
+    border-style: none;
+    border-radius: 5px;
+    background-color: rgb(211, 211, 211);
+    height: 1cm;
+    font-size: large;
+}
+#Depenses input[type="date"] , input[type="double"] {
+    width: 100%;
+    
+    border-style: none;
+    border-radius: 5px;
+    background-color: rgb(211, 211, 211);
+    height: 1cm;
+    font-size: large;
+}
+#Depenses input[type="submit"]{
+    width: 60%;
+    border-style: none;
+    border-radius: 5px;
+    background-color: rgb(6, 63, 51);
+    height: 0.75cm;
+    color: aliceblue;
+    margin-top: 0.5cm;
+    align-self: center;
+}
+#Depenses input[type="submit"]:hover{
+    animation-name: hover;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+#theList{
+    width: 70%;
+    height: auto;
+
+}
+
+.user_footer{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(27, 27, 27);
+    box-shadow: 0 -6px 0 rgba(241, 225, 7, 0.87);
+}
+.link{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.link li{
+    list-style: none;
+    font-size: 15px;
+}
+.link a{
+    color: aliceblue;
+}
+#deconnexion{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 7vh;
+    right: 0;
+    align-items: start;
+    width:5cm;
+    background-color: rgb(255, 255, 255);
+    justify-content: start;
+}
+#deconnexion ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 0.5cm;
+    color: black;
+}
+#deconnexion li{
+    list-style: none;
+}
+#deconnexion li:hover{
+    transform: scale(1.1);
+}
+#deconnexion a{
+    color: black;
+}
+
+@media  (max-width: 1000px){
+    .contains_user{
+        justify-content: center;
+        align-items: center;
+    }
+    .contains_user div{
+        margin: 0 0 0 0;
+        animation: none;
+        padding: 1cm;
+        background-color: rgba(117, 122, 122, 0.644)
+    }
+    .header_user nav{
+        display: none;
+    }
+    .header_user{
+        display: grid;
+        grid-template-columns:95vw 5vw;
+        /* justify-content: center; */
+        align-items: center;
+        background-color: rgb(255, 255, 255);
+    }
+    .userInfo{
+        display: none;
+    }
+    .menuBar{
+        align-items: end;
+    }
+    #Ceuillete{
+        flex-direction: column;
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+    }
+    #Depenses{
+        flex-direction: column-reverse;
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+    }
+    #Ceuillete img{
+        width: 100%;
+    }
+    #Ceuillete div{
+        width: 100%;
+    }
+
+    #Depenses img{
+        width: 100%;
+    }
+    #Depenses div{
+        width: 100%;
+    }
+   .link{
+        grid-template-rows: 10vh 20vh;
+    }
+
+}
+@media (max-width: 600px){
+    #home_Admin{
+        background-color: rgb(20, 67, 88);
+        display: grid;
+        grid-template-columns:repeat();
+    }
+    .body_admin{
+        display: grid;
+        grid-template-columns:1fr;
+        grid-template-rows:5vh 95vh 5vh;
+        grid-template-areas: 
+        "home_admin"
+        "contains_admin" 
+        "footer_admin";
+    }
+    
+}
+
