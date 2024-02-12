@@ -25,17 +25,3 @@ To do :
                 => utilisateur
             - else => index,erreur
 - page admin
-- afficher-salaire
-    - affichage (view) :
-        - information de l'employee (nom)
-        - nombre de jour niasana
-        - salaire
-    - fonction (Model) :
-        - calculSalaire(nombre de jour , taux journalier)
-        - nombreJourOuvrable(date embauche , date du jour)
-    - donnee (sql) :
-        - employee 
-    - integration :
-        - appel nombreJourOuvrable
-        - appel calculSalaire
-        - affichage salaire 
