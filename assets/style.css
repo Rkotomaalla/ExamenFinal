@@ -128,5 +128,294 @@ footer{
     background-color: rgb(88, 88, 88);
     font-weight: normal;
 }
+#home_Admin{
+    height: 7vh;
+    position: absolute;
+    width: 100vw;
+    grid-area: home_admin;
+}
+.contains_admin{
+    background-color: rgb(236, 236, 236);
+    grid-area: contains_admin;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5cm;
+    padding: 0.5cm;
+    align-items: center;
+    overflow-y: auto;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}   
+#add{
+    width: 4cm;
+    border-style: none;
+    background-color: rgb(173, 173, 173);
+    border-radius: 5px;
+    padding: 4px;
+}
+.theElement{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+    height: 7cm;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+}
+#image{
+    padding: 0.5cm;
+    overflow: cover;
+    width: 4cm;
+    height: 4cm;
+}
+.infoThe {
+    width: 1fr;
+    display: flex;
+    flex-direction: column;
+
+}
+.infoThe img{
+    width: 0.75cm;
+    overflow: cover;
+
+}
+.theElement button{
+    width: 4cm;
+    border-style: none;
+    background-color: rgb(173, 173, 173);
+    border-radius: 5px;
+    padding: 4px;
+    
+}
+.title{
+    background-color: rgb(20, 67, 88);
+   
+}
+.menu_admin li{
+    list-style: none;
+}
+.menu_admin a{
+    text-decoration: none;
+    color: rgb(65, 65, 65);
+}
+
+.menu_admin li:hover{
+    /* background-color: rgb(139, 139, 139); */
+    transform: scale(1.1);
+    font-weight: normal;
+}
+#footer_admin{
+    background-color: bisque;
+    grid-area: footer_admin;
+}
+.menu_admin{
+    grid-area: menu_admin;
+}
+.info_Admin{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    padding:0 1cm 0 0;
+    height: 100%;
+    /* background-color: rgb(24, 82, 82); */
+    font-weight: normal;
+    color: rgb(77, 83, 83);
+    gap: 1cm;
+}
+.info_Admin img{
+    overflow: cover;
+    border-radius: 50%;
+    width: 2vw;
+
+}
+.SettingDiv{
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.74);
+}
+.SettingDiv form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1cm;
+    background-color: rgb(255, 255, 255);
+    border-radius:15px;
+    gap: 1cm;
+    width: 20%;
+    border: 3px solid  rgb(20, 67, 88);
+    
+}
+.SettingDiv img{
+    width: 0.5cm;
+    overflow: cover;
+}
+.SettingDiv input{
+    width: 90%;
+    height: 0.75cm;
+    border-radius: 5px;
+    border-style: none;
+    background-color: rgb(231, 231, 231);
+}
+.SettingDiv input[type="submit"]{
+    color: aliceblue;
+    width: 4cm;
+    background-color: rgb(20, 67, 88);
+}
+.SettingDiv input[type="submit"]:hover{
+    transform: scale(1.1);
+}
+
+
+.ModifyDiv{
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.74);
+}
+.ModifyDiv form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1cm;
+    background-color: rgb(255, 255, 255);
+    border-radius:15px;
+    gap: 1cm;
+    width: 20%;
+    border: 3px solid  rgb(20, 67, 88);
+    
+}
+.ModifyDiv img{
+    width: 0.5cm;
+    overflow: cover;
+}
+.ModifyDiv input{
+    width: 90%;
+    height: 0.75cm;
+    border-radius: 5px;
+    border-style: none;
+    background-color: rgb(231, 231, 231);
+}
+.ModifyDiv input[type="submit"]{
+    color: aliceblue;
+    width: 4cm;
+    background-color: rgb(20, 67, 88);
+}
+.ModifyDiv input[type="submit"]:hover{
+    transform: scale(1.1);
+}
+
+/* =============================================================================================================== */
+@media (min-width: 1000px) {
+    .menu_admin{
+        display: flex;
+        flex-direction: column;
+        width: 15vw;
+        align-items: center;
+        background-color: rgb(255, 255, 255);
+        grid-area: menu_admin;
+        font-size: 20px;
+        font-weight: lighter;
+        justify-content: center;
+    }
+    .menu_admin ul{
+        /* border: 1px black solid; */
+        /* margin-top: 5cm; */
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        gap: 1cm;
+    }   
+    .menu_admin li{
+        /* border: 1px black solid; */
+        width: 100%;
+        /* margin-top: 1cm; */
+    }   
+    #menu_icon{
+        display: none;
+    }
+    #nav_icon{
+        display: none;
+    }
+    #home_Admin{
+        display: grid;
+        grid-template-columns:repeat(2,50%);        
+    }
+    .body_admin{
+        display: grid;
+        grid-template-columns:auto 1fr;
+        grid-template-rows:7vh 95vh 5vh;
+        grid-template-areas: 
+        "home_admin home_admin"
+        "menu_admin contains_admin"
+        "footer_admin footer_admin";
+    }
+    #home_Admin{
+        display: grid;
+        grid-template-columns: 0vw 15vw 1fr 2vw;
+        height: 7vh;
+        align-items: center ;
+        box-shadow: 1px 1px 1px 1px rgb(20, 67, 88);
+    }
+    
+
+}
+/* =============================================================================================================== */
+@media (min-width: 600px) and (max-width: 1000px){
+    #menu_icon{
+        display: none;
+    }
+    #nav_icon{
+        display: none;
+    }
+    #home_Admin{
+        background-color: rgb(161, 153, 142);
+        display: grid;
+        grid-template-columns:repeat();
+    }
+    .body_admin{
+        display: grid;
+        grid-template-columns:1fr;
+        grid-template-rows:5vh 7vh 95vh 5vh;
+        grid-template-areas: 
+        "home_admin"
+        "menu_admin"
+        "contains_admin" 
+        "footer_admin";
+    }
+}
+@media (max-width: 600px){
+    #home_Admin{
+        background-color: rgb(20, 67, 88);
+        display: grid;
+        grid-template-columns:repeat();
+    }
+    .body_admin{
+        display: grid;
+        grid-template-columns:1fr;
+        grid-template-rows:5vh 95vh 5vh;
+        grid-template-areas: 
+        "home_admin"
+        "contains_admin" 
+        "footer_admin";
+    }
+    
+}
+
 
 
