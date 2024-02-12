@@ -1,0 +1,41 @@
+Application : permet de gérer la production et la cueillette de thé. 
+
+To do :
+- index (login) :
+    - affichage (view) :
+        - formulaire de connexion (login , mot de passe , submit)
+    - fonction (Model)
+    - donnee (sql)
+    - integration
+        - action formulaire (traitement login)
+- traitement-login
+    - affichage (view)
+    - fonction (Model)
+        - login(login , mot de passe , isAdmin) return 1,0,-1
+    - donnee (sql)
+        - utilisateur (id , login , nom , mot de passe , date naissance)
+        - admin (id , login , nom , mot de passe , date naissance)
+    - integration
+        - recuperer login , mot de passe , isAdmin
+        - appeler fonction login(login , mot de passe , isAdmin)
+        - retour fonction login :
+            - if(1) 
+                => admin
+            - if(0)
+                => utilisateur
+            - else => index,erreur
+- page admin
+- afficher-salaire
+    - affichage (view) :
+        - information de l'employee (nom)
+        - nombre de jour niasana
+        - salaire
+    - fonction (Model) :
+        - calculSalaire(nombre de jour , taux journalier)
+        - nombreJourOuvrable(date embauche , date du jour)
+    - donnee (sql) :
+        - employee 
+    - integration :
+        - appel nombreJourOuvrable
+        - appel calculSalaire
+        - affichage salaire 
