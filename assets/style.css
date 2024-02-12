@@ -6,7 +6,7 @@ body{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
-header{ 
+#header_login{ 
     display: grid;
     grid-template-columns:repeat(2,minmax(30vw,70vw));
     width: 100vw;
@@ -67,8 +67,11 @@ header{
     animation-name: login_slide;
     animation-duration: 3s;
     animation-fill-mode: forwards;
-    gap:1cm
+    gap:1cm;
+    border-radius:10px;
 }
+
+@media (min-width: 768px  max-width: 979px) {}
 
 @keyframes login_slide{
     0%{
