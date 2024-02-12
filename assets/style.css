@@ -71,7 +71,7 @@ body{
     border-radius:10px;
 }
 
-@media (min-width: 768px  max-width: 979px) {}
+
 
 @keyframes login_slide{
     0%{
