@@ -1,5 +1,5 @@
 <?php
-    include('../../inc/fonctions/f_salaire.php');
+    include('../../inc/fonctions/include.php');
     $all_salaire=array();
     $all_salaire=get_allSalaire();
 ?>
@@ -27,7 +27,7 @@
             <img src="../../assets/images/icon/marque-de-croix.png" alt="" id="cancel">
             <!-- NB asio fonction miverifier so vide -->
             <input type="date" name="dateAjout" id="DateAjout" placeholder="Date" required>
-            <input type="double" name="prixAjout" id="" placeholder="Montant du salaire" required>
+            <input type="double" name="prixAjout" id="prixAjout" placeholder="Montant du salaire" required>
             <input type="submit" value="ajouter">
         </form>
     </div>
@@ -39,7 +39,7 @@
             <img src="../../assets/images/icon/marque-de-croix.png" alt="" id="cancelModify">
             <!-- NB asio fonction miverifier so vide -->
             <input  type="hidden" id="id_salaire_modif" name="id_modif"> 
-            <input type="date" id="date_modif" name="date_modif" placeholder="date" required>
+            <input type="date" id="dt_modif" name="date_modif" placeholder="date" required>
             <input type="double" name="prix_modif" id="prix_modif" placeholder="Montant" required>
             <input type="submit" value="modifier">
         </form>

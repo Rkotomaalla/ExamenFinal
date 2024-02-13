@@ -13,7 +13,7 @@ function insert_cueillette (formulaire) {
     try {
         xhr = new XMLHttpRequest ();
     } catch (error) { xhr = false; }
-    var form_data = new FormData (formulaire); // on transforme le formulaire sous forme JSON
+var form_data = new FormData (formulaire); // on transforme le formulaire sous forme JSON
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status === 200) {

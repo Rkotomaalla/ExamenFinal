@@ -1,5 +1,5 @@
 <?php
-    include('../../inc/fonctions/f_the.php');
+    include('../../inc/fonctions/include.php');
     $all_variete=array();
     $all_variete=get_allthe();
 ?>

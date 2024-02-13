@@ -1,5 +1,5 @@
 <?php
-    include('../../inc/fonctions/f_categorie_depanse.php');
+    include('../../inc/fonctions/include.php');
     $all_depense=array();
     $all_depense=get_allCategDep();
 ?>

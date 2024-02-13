@@ -77,23 +77,23 @@
         <div>
             <p>Ajouter une ceuillette</p>
             <form id = "form_cueillette">
-                <label for="date">Date</label><input type="date" name="" id="date">
+                <label for="date">Date</label><input type="date" name="date" id="date">
                 <label for="ceuilleur">Ceuilleur</label>
-                <select name="" id="ceuilleur">
+                <select name="ceuilleur" id="ceuilleur">
                     <?php for ($i=0; $i < count($liste_cueilleurs); $i++) { ?>
                         <option value="<?php echo $liste_cueilleurs[$i]['id'] ?>"><?php echo $liste_cueilleurs[$i]['nom'] ?></option>
                     <?php } ?>
                 </select>
                 
                 <label for="partielle">Partielle</label>
-                <select name="" id="ceuilleur">
+                <select name="parcelle" id="ceuilleur">
 
                     <?php for ($i=0; $i < count($liste_parcelles); $i++) { ?>
                         <option value="<?php echo $liste_parcelles[$i]['num_parcelle'] ?>">Parcelle <?php echo $liste_parcelles[$i]['num_parcelle'] ?></option>
                     <?php } ?>
                 </select>
                 <label for="poids">Poids</label>
-                <input type="double" id="poids">
+                <input type="double" id="poids" name="poids">
                 <input type="submit" value="Ajouter">
             </form>
         </div>
@@ -102,16 +102,16 @@
     <div id="Depenses">
         <div>
             <p>Notez votre Dépense</p>
-            <form >
-                <label for="date">Date</label><input type="date" name="" id="date">
+            <form id="form_depense">
+                <label for="date">Date</label><input type="date" name="date" id="date">
                 <label for="Categorie">Categorie</label>
-                <select name="" id="Categorie">
+                <select name="categorie" id="Categorie">
                     <?php for ($i=0; $i < count($liste_categ_dep); $i++) { ?>
                         <option value="<?php echo $liste_categ_dep[$i]['id'] ?>"><?php echo $liste_categ_dep[$i]['nom'] ?></option>
                     <?php } ?>
                 </select>
                 <label for="montant">Montant</label>
-                <input type="double" id="montant">
+                <input type="double" id="montant" name="montant">
                 <input type="submit" value="Ajouter">
             </form>
         </div>
@@ -146,8 +146,93 @@
                 q=0;
             }
         });
+
+        window.addEventListener("load", function () {
+            
+        });
+
+        function getXHR() {
+            var xhr; 
+            try {  xhr = new ActiveXObject('Msxml2.XMLHTTP');   }
+            catch (e) 
+            {
+                try {   xhr = new ActiveXObject('Microsoft.XMLHTTP'); }
+                catch (e2) 
+                {
+                try {  xhr = new XMLHttpRequest();  }
+                catch (e3) {  xhr = false;   }
+                }
+            }
+            return xhr;
+        }
+
+        
+        function submitFormCueillette(){ 
+            var xhr = getXHR();
+            var formdata = new FormData(formCueillette) ;
+            // Définissez ce qui se passe si la soumission s'est opérée avec succès
+            xhr.addEventListener("load", function(event) {
+                // console.log(xhr.responseText);
+                var reponse = xhr.responseText;
+                console.log(reponse);
+                if (reponse === "error") {
+                    alert("Le poids doit etre inferieur au poids de la somme des feuilles deja ceuillis");
+                }
+                else if(reponse === "probleme"){
+                    alert("Il y a eu un probleme, veuillez reessayer");
+                }
+            });
+
+            // Definissez ce qui se passe en cas d'erreur
+            xhr.addEventListener("error", function(event) {
+                alert('Oups! Quelque chose s\'est mal passé.');
+            });
+            
+            // Configurez la requête
+            xhr.open("POST", "../../pages/traitements/traitement-cueillette.php"); 
+            
+            // Les données envoyées sont ce que l'utilisateur a mis dans le formulaire
+            xhr.send(formdata); 
+        }
+
+        function submitFormDepense(){ 
+            var xhr = getXHR();
+            var formdata = new FormData(formDepense) ;
+            // Définissez ce qui se passe si la soumission s'est opérée avec succès
+            xhr.addEventListener("load", function(event) {
+                // console.log(xhr.responseText);
+                var reponse = xhr.responseText;
+                console.log(reponse);
+                if (reponse === "non") {
+                    alert("Il y a eu des problemes");
+                }
+            });
+
+            // Definissez ce qui se passe en cas d'erreur
+            xhr.addEventListener("error", function(event) {
+                alert('Oups! Quelque chose s\'est mal passé.');
+            });
+            
+            // Configurez la requête
+            xhr.open("POST", "../../pages/traitements/traitement-depense.php"); 
+            
+            // Les données envoyées sont ce que l'utilisateur a mis dans le formulaire
+            xhr.send(formdata); 
+        }
+        
+        var formCueillette = document.getElementById("form_cueillette");
+        formCueillette.addEventListener("submit", function (event) {
+            event.preventDefault(); // évite de faire le submit par défaut
+            submitFormCueillette();
+        });
+        var formDepense = document.getElementById("form_depense");
+        formDepense.addEventListener("submit", function (event) {
+            event.preventDefault(); // évite de faire le submit par défaut
+            submitFormDepense();
+        });
+
     </script>
 
-    <script src="../../assets/js/model_user.js"></script>
+    <!-- <script src="../../assets/js/model_user.js"></script> -->
 </body>
 </html>

@@ -1,5 +1,5 @@
 <?php
-    include('../../inc/fonctions/f_cueilleur.php');
+    include('../../inc/fonctions/include.php');
     // $num = $_POST['numAjout'];
     $nom = $_POST['nomAjout'];
     $genre = $_POST['genreAjout'];

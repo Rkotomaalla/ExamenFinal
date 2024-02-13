@@ -1,5 +1,5 @@
 <?php
-    include('../../inc/fonctions/f_parcelle.php');
+    include('../../inc/fonctions/include.php');
     // $num = $_POST['numAjout'];
     $surface = $_POST['surfaceAjout'];
     $id_the = $_POST['id_theAjout'];

@@ -1,5 +1,5 @@
 <?php
-    require_once('..\inc\fonctions\function.php');
+    require_once('..\inc\fonctions\include.php');
     $nom = $_POST['nom'];
     $email = $_POST['email'];
     $genre = $_POST['genre'];

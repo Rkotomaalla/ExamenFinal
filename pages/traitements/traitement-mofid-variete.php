@@ -1,5 +1,5 @@
 <?php
-    require_once('..\inc\fonctions\function.php');
+    include('..\inc\fonctions\include.php');
     $id = $_POST['id'];
     $nom = $_POST['nom'];
     $occupation = $_POST['occupation'];

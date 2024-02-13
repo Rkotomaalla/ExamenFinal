@@ -1,5 +1,5 @@
 <?php
-    include('../../inc/fonctions/f_categorie_depanse.php');
+    include('../../inc/fonctions/include.php');
     // $num = $_POST['numAjout'];
     $nom = $_POST['nomAjout'];
     insert_categDep($nom);

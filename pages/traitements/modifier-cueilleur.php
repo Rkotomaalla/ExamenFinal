@@ -1,5 +1,5 @@
 <?php
-    include('../../inc/fonctions/f_cueilleur.php');
+    include('../../inc/fonctions/include.php');
     $id = $_POST['id_modif'];
     $nom = $_POST['nom_modif'];
     $genre = $_POST['genre_modif'];

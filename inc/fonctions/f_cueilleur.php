@@ -87,4 +87,21 @@
         return $res;
     }
 
+    function calcule_poid_cueilli_parcelle($id_parcelle,$date) {
+        $conn = connexion_bdd();
+        $dates = new DateTime($date);
+        $month = $dates->format('m');
+        $year = $dates->format('Y');
+        $sql = "SELECT SUM(poids) AS somme FROM examfinal_s3_cueillette 
+                where EXTRACT(MONTH FROM dt) = '$month' 
+                AND EXTRACT(YEAR FROM dt) = '$year' and id_parcelle = ".$id_parcelle."";
+        $result = mysqli_query($conn, $sql);
+        $somme= 0;
+        while ($donnees = mysqli_fetch_assoc($result)) {
+            $somme += $donnees['somme'];
+        }
+        
+        return $somme;
+    }
+
 ?>

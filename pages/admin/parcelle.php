@@ -1,5 +1,5 @@
 <?php
-    include('../../inc/fonctions/f_parcelle.php');
+    include('../../inc/fonctions/include.php');
     $all_parcelle=array();
     $all_parcelle=get_allparcelle();
 ?>

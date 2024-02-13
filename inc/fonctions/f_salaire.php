@@ -1,6 +1,6 @@
 <?php
 
-    include ("connexion.php");
+    // include ("connexion.php");
 
     function insert_salaire ($date, $prix) {
         /**

@@ -1,5 +1,5 @@
 <?php
-    include('../../inc/fonctions/f_cueilleur.php');
+    include('../../inc/fonctions/include.php');
     $all_cueilleur=array();
     $all_cueilleur=get_allCueilleur();
 ?>
@@ -42,9 +42,9 @@
             <img src="../../assets/images/icon/marque-de-croix.png" alt="" id="cancelModify">
             <!-- NB asio fonction miverifier so vide -->
             <input type="hidden" id="id_modif" name="id_modif" required>
-            <input type="text" name="nom_modif" id="" placeholder="Nom du cueilleur" required>
-            <input type="text" name="genre_modif" id="" placeholder="Genre du cueilleur" required>
-            <input type="date" name="ddn_modif" id="" placeholder="Date de naissance du cueilleur" required>
+            <input type="text" name="nom_modif" id="nom_modif" placeholder="Nom du cueilleur" required>
+            <input type="text" name="genre_modif" id="genre_modif" placeholder="Genre du cueilleur" required>
+            <input type="date" name="ddn_modif" id="ddn_modif" placeholder="Date de naissance du cueilleur" required>
             <input type="submit" value="modifier">
         </form>
     </div>
@@ -75,10 +75,12 @@
                 const currentDivId = this.getAttribute('data-id');
 
                 var nom = document.getElementById("id_modif");
-                nom.value = currentDivId; // Accédez au contenu texte de l'élément
+                nom.value = currentDivId;
+                console.log(currentDivId); // Accédez au contenu texte de l'élément
 
                 var occupation = document.getElementById("nom_modif");
                 occupation.value = nomAll[index].textContent; // Accédez au contenu texte de l'élément
+                console.log(nomAll[index].textContent);
 
                 var genre = document.getElementById("genre_modif");
                 genre.value = genreAll[index].textContent; // Accédez au contenu texte de l'élément

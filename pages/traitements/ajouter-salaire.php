@@ -1,5 +1,5 @@
 <?php
-    include('../../inc/fonctions/f_salaire.php');
+    include('../../inc/fonctions/include.php');
     // $num = $_POST['numAjout'];
     $dt = $_POST['dateAjout'];
     $prix = $_POST['prixAjout'];
