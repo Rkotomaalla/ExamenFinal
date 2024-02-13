@@ -421,9 +421,6 @@ footer{
 
 /*utilisateurr*/
 .first{
-background-image: url("../assets/images/background/2150708122.jpg");
-
-    background-size: cover;
 
     display: grid;
     grid-template-rows: 7vh 93vh;
@@ -439,6 +436,10 @@ width: 100vw;
 background-color: rgb(240, 240, 240);
 }
 .contains_user{
+    background-image: url("../assets/images/background/2150708122.jpg");
+
+    background-size: cover;
+
     display: flex;
     justify-content: end;
     align-items: center;
@@ -474,7 +475,7 @@ background-color: rgb(240, 240, 240);
     /* justify-content: center; */
     align-items: center;
     background-color: rgb(255, 255, 255);
-    height: 7vh;
+    height: 7vh ;
 }
 .header_user a{
     color: rgb(46, 46, 46);
@@ -870,3 +871,87 @@ a{
     
 }
 
+#select_date{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.74);
+}
+#select_date form{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1cm;
+    background-color: rgb(255, 255, 255);
+    border-radius:15px;
+    gap: 1cm;
+    width: 20%;
+    border: 3px solid  rgb(20, 67, 88);
+    
+}
+
+#select_date input{
+    width: 90%;
+    height: 0.75cm;
+    border-radius: 5px;
+    border-style: none;
+    background-color: rgb(231, 231, 231);
+}
+#select_date input[type="submit"]{
+    color: aliceblue;
+    width: 4cm;
+    background-color: rgb(20, 67, 88);
+}
+#select_date input[type="submit"]:hover{
+    transform: scale(1.1);
+    animation-name: hover;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.contains_result{
+    margin-top: 0.5cm;
+    width: 70vw;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    /* align-self: center; */
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5cm;
+}
+.contains_result img {
+    width: 100%;
+    overflow: cover;
+    
+}
+#resultat_user{
+    width: 60%;
+    border-bottom: 2px solid #023519;
+    text-align: center;
+    font-size: 20px;
+}
+#date{
+    font-weight: bold;
+}
+.table_result{
+
+    width: 60%;
+    overflow-y: auto;
+    border: 2px solid #000000;
+    text-align: center;
+}
+.table_result th{
+    background-color: #d3d3d3;
+}
+#error_date{
+    color: rgb(218, 69, 31);
+    font-weight: lighter;
+}
