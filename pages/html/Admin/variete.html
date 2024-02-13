@@ -21,10 +21,37 @@
             <p>Tendry mandry</p>
         </div>
 <!-- ovaina ny lien an ilay icona -->
-            <img class="menu_icon" src="../../../assets/images/icon/barre-de-menu (1).png" alt="">
+            <img class="menuBar" src="../../../assets/images/icon/barre-de-menu (1).png" alt="">
         
        
     </header>
+<!-- NOUVEAUUUUUUU==================================================== -->
+    <div id="deconnexion">
+        <ul>
+            <li><a href="">variete de the</a></li>
+            <li><a href="">Pertielles</a></li>
+            <li><a href="">Voir le Profil</a></li>
+            <li><a href="">Modifier Le Profil</a></li>
+            <!-- atao eto ny lien php rah ideconnecter -->
+            <li><a href="">Deconnection</a></li>
+        </ul>
+    </div>
+    <script defer>
+        var q=0;
+        const menu=document.getElementsByClassName("menuBar")[0];
+        menu.addEventListener("click",function(){
+            const menuItem=document.getElementById("deconnexion");
+            if(q==0){
+                menuItem.style.display="flex";
+                q=1;
+            }
+            else{
+                menuItem.style.display="none";
+                q=0;
+            }
+        });
+    </script>
+<!-- =========================================================== -->
 <!-- contenu Miovahovaa -->
 
 
@@ -105,7 +132,51 @@
             <li><a href="">Parcèlles</a></li>
             <li><a href="">Ceuilleurs</a></li>
             <li><a href="">Dépenses</a></li>
-            <li><a href="">Salaires</a></li>       
+            <li><a href="">Salaires</a></li>
+ <!--NOUVEAUUUU ================================================================  -->
+            <li id="generate"> Mois de regeneration</li>
+            <div id="regeneration_check">
+                
+                <form action="">
+                    <img src="../../../assets/images/icon/marque-de-croix.png" alt="" id="cancelCheck">
+                    <p>Choisissez les mois</p>
+                    
+                    <label for="">Janvier <input type="checkbox" name="" id=""></label>
+                    <label for="">Fevrier <input type="checkbox" name="" id=""></label>
+                    <label for="">Mars <input type="checkbox" name="" id=""></label>
+                    <label for="">Avril <input type="checkbox" name="" id=""></label>
+                    <label for="">Mai <input type="checkbox" name="" id=""></label>
+                    <label for="">Juin <input type="checkbox" name="" id=""></label>
+                    <label for="">Juillet <input type="checkbox" name="" id=""></label>
+                    <label for="">Aout <input type="checkbox" name="" id=""></label>
+                    <label for="">Septembre<input type="checkbox" name="" id=""></label>
+                    <label for="">Octobre <input type="checkbox" name="" id=""></label>
+                    <label for="">Novembre <input type="checkbox" name="" id=""></label>
+                    <label for="">Décembre<input type="checkbox" name="" id=""></label>
+                    
+                    <input type="submit" value="Valider">
+                </form>
+            </div>
+            <script defer>
+                const generate=document.getElementById("generate");
+                    generate.addEventListener("click",function(){
+                    const div_check=document.getElementById("regeneration_check");
+                    div_check.style.display="flex";
+                    
+                    div_check.style.animationName="slideShow";
+                    div_check.style.animationDuration="2s";
+                    div_check.style.animationFillMode="Forwards";
+                });
+                const cancelCheck=document.getElementById("cancelCheck");
+                cancelCheck.addEventListener("click",function(){
+                    const div_check=document.getElementById("regeneration_check");
+                    div_check.style.animationName="slide";
+                    div_check.style.animationDuration="2s";
+                    div_check.style.animationFillMode="Forwards";
+        });
+            </script>
+ <!--NOUVEAUUUU ================================================================  -->
+
         </ul>
             
     </div>
@@ -116,12 +187,21 @@
         var id=document.getElementById("add");
         id.addEventListener("click",function(){
             const div=document.getElementsByClassName("SettingDiv")[0];
+            // div.style.display="flex"; fafanaaaaa
+            // nouveauuuu
             div.style.display="flex";
+            div.style.animationName="slideShow";
+                    div.style.animationDuration="2s";
+                    div.style.animationFillMode="Forwards";
         });
         var cancel=document.getElementById("cancel");
         cancel.addEventListener("click",function(){
             const div=document.getElementsByClassName("SettingDiv")[0];
-            div.style.display="none";
+            // div.style.display="none"; fafannaaa
+//nouveauuuuuuuu            
+            div.style.animationName="slide";
+            div.style.animationDuration="2s";
+            div.style.animationFillMode="Forwards";
         });
 
 
@@ -131,13 +211,22 @@
         for(var i=0;i<ids.length;i++){
             ids[i].addEventListener("click",function(){
             const div=document.getElementsByClassName("ModifyDiv")[0];
+            // div.style.display="flex"; Fafana
+// nouveauuuu
             div.style.display="flex";
+            div.style.animationName="slideShow";
+            div.style.animationDuration="2s";
+            div.style.animationFillMode="Forwards";
         });
         }
         var canceld=document.getElementById("cancelModify");
         canceld.addEventListener("click",function(){
             const div=document.getElementsByClassName("ModifyDiv")[0];
-            div.style.display="none";
+            // div.style.display="none"; FAFANAAAA
+            //nouveauuuuuuuu            
+            div.style.animationName="slide";
+            div.style.animationDuration="2s";
+            div.style.animationFillMode="Forwards";
         });
     </script>
 </body>

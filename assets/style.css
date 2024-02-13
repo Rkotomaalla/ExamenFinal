@@ -205,7 +205,7 @@ footer{
     font-weight: normal;
 }
 #footer_admin{
-    background-color: bisque;
+    background-color: rgb(37, 37, 37);
     grid-area: footer_admin;
 }
 .menu_admin{
@@ -954,4 +954,99 @@ a{
 #error_date{
     color: rgb(218, 69, 31);
     font-weight: lighter;
+}
+
+
+
+#regeneration_check{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.74);
+}
+#regeneration_check p{
+    font-weight: bold;
+}
+#regeneration_check form{
+    font-size: smaller;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1cm;
+    background-color: rgb(255, 255, 255);
+    border-radius:15px;
+    
+    width: 20%;
+    border: 3px solid  rgb(20, 67, 88);
+    height: 50vh;
+    overflow-y: auto;
+}
+
+#regeneration_check input{
+    /* width: 90%;s */
+    /* height: 0.75cm; */
+    border-radius: 5px;
+    border-style: none;
+    background-color: rgb(100, 100, 100);
+}
+#regeneration_check input[type="submit"]{
+    margin-top: 0.5cm;
+    width: 90%;
+    height: 0.75cm;
+    color: aliceblue;
+    width: 4cm;
+    background-color: rgb(20, 67, 88);
+}
+#regeneration_check input[type="submit"]:hover{
+    transform: scale(1.1);
+    animation-name: hover;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes slide{
+    50%{
+    transform: scale(0.9);
+    top: 0;
+    left: 0;   
+    }
+    99%{
+        display: flex;
+        left: 100vw;
+        transform: scale(0.9);
+        
+    }
+    100%{
+        display: none;
+
+    }
+}
+@keyframes slideShow{
+    0%{
+    transform: scale(0.9);
+     display: none;
+     left: -100vw;
+    }
+    1%{
+        display: flex;  
+    }
+    50%{
+        display: flex;
+        transform: scale(0.9);
+        left:0;
+    }
+    100%{
+        display: flex;
+        transform: scale(1);
+        top: 0;
+        left: 0;  
+    }
 }
