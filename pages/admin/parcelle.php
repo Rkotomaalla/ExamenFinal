@@ -1,5 +1,5 @@
 <?php
-    include('../../inc/fonctions/include.php');
+    // include('../../inc/fonctions/include.php');
     $all_parcelle=array();
     $all_parcelle=get_allparcelle();
 ?>
@@ -11,8 +11,8 @@
                 <div class="theElement">
                     <img id="image" src="" alt="">
                     <div class="infoThe">
-                    <p class="surface"><?php echo $one_parcelle['surface'];?></p>
-                    <p class="id_the"><?php echo $one_parcelle['id_the'];?></p>
+                    <p class="surface">Surface: <?php echo $one_parcelle['surface'];?></p>
+                    <p class="id_the">Id the: <?php echo $one_parcelle['id_the'];?></p>
                     <p><button class="modify" data-num="<?php echo $one_parcelle['num_parcelle']; ?>">Modifier</button>
                     <img class="delete" src="../../assets/images/icon/supprimer.png" alt="" data-num="<?php echo $one_parcelle['num_parcelle']; ?>"></p>
                     </div>

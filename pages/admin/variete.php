@@ -11,10 +11,10 @@
                 <div class="theElement">
                     <img id="image" src="" alt="">
                     <div class="infoThe">
-                    <h3 class="nom"><?php echo $one_variete['nom'];?></h3>
-                    <p class="occupation"><?php echo $one_variete['occupation'];?></p>
-                    <p class="rendement"><?php echo $one_variete['rendement'];?></p>
-                    <p class="prix_vente"><?php echo $one_variete['prix_vente'];?></p>
+                    <h3 class="nom">Nom: <?php echo $one_variete['nom'];?></h3>
+                    <p class="occupation">Surface occupée: <?php echo $one_variete['occupation'];?></p>
+                    <p class="rendement">Rendement: <?php echo $one_variete['rendement'];?></p>
+                    <p class="prix_vente">Prix Vente: <?php echo $one_variete['prix_vente'];?></p>
                     <p><button class="modify" data-id="<?php echo $one_variete['id']; ?>">Modifier</button>
                     <img class="delete" src="../../assets/images/icon/supprimer.png" alt="" data-id="<?php echo $one_variete['id']; ?>"></p>
                     </div>

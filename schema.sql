@@ -1,16 +1,12 @@
-
--- mysql -u root -p
-
-create database examfinal_s3;
-
 create table examfinal_s3_admin (
     id_admin int primary key AUTO_INCREMENT,
     nom varchar (100) not null,
     email varchar (100) not null,
     date_naiss date not null,
     genre char(1) not null,
-    mdp varchar (10) not null -- 10 caracteres maximum
+    mdp varchar (10) not null 
 );
+
 
 create table examfinal_s3_user (
     id_user int primary key AUTO_INCREMENT,
@@ -18,41 +14,30 @@ create table examfinal_s3_user (
     email varchar (100) not null,
     date_naiss date not null,
     genre char(1) not null,
-    mdp varchar (10) not null -- 10 caracteres maximum
+    mdp varchar (10) not null 
 );
-
-insert into examfinal_s3_user (nom, email, date_naiss, genre, mdp)
-values ('fefjoiej', 'kiady@gmail.com', '2004-10-01', 'f', 'ki');
 
 create table examfinal_s3_the (
     id int primary key AUTO_INCREMENT,
     nom varchar (100) not null,
-    occupation double, -- espace occupé par un pied
-    rendement double, -- rendement de feuilles par mois (kg)
+    occupation double, 
+    rendement double, 
     prix_vente double
 );
 
 
--- VIEW pour la recolt par parcelle par mois (view entre la table the et la table parcelle)
     create view examfinal_s3_v_recolt_mois as select p.num_parcelle num_parcelle, (p.surface * 10000) surf_m2, ((p.surface * 10000 * t.rendement)/t.occupation) rendement from examfinal_s3_parcelle as p join examfinal_s3_the as t on p.id_the = t.id;
-    /*
-    recolte par mois,
-        - num parcelle 
-        - surf_m2 (surface en m²)
-        - rendement (total par parcelle)
-    */
--- VIEW pour la recolt par parcelle par mois
-
+  
 create table examfinal_s3_parcelle (
-    num_parcelle int primary key AUTO_INCREMENT, -- numero du parcelle
-    surface double, -- surface en hectare
-    id_the int references examfinal_s3_the (id) -- id du variété the planté
+    num_parcelle int primary key AUTO_INCREMENT,
+    surface double, 
+    id_the int references examfinal_s3_the (id) 
 );
 
 create table examfinal_s3_cueilleur (
     id int primary key AUTO_INCREMENT, 
     nom varchar (100) not null,
-    genre char (1) not null, -- m || f
+    genre char (1) not null, 
     date_naiss date
 );
 
@@ -68,9 +53,7 @@ create table examfinal_s3_salaire (
     dt date not null,
     prix double not null
 );
-    insert into examfinal_s3_salaire (dt, prix)
-    values ('2024-04-25', 456000);
-    -- view salaire par mois
+    
     create view examfinal_s3_v_salaire_parmois as select max(dt) dt, sum(prix) ttlsalaire from examfinal_s3_salaire group by month(dt), year(dt);
 
 
@@ -82,14 +65,11 @@ create table examfinal_s3_cueillette (
     poids double not null
 );
 
-insert into  examfinal_s3_cueillette (dt, id_cueilleur, id_parcelle, poids)
-values ('2024-08-30', 2, 2, 46580);
 
-    -- VIEW pour la somme de cueillette par parcelle
         create view examfinal_s3_v_cueillette_moisparcelle as select id_parcelle, max(dt) dt, sum(poids) poids from examfinal_s3_cueillette group by id_parcelle, month(dt), year(dt);
-    -- view pour le reste par parcelle 
+
         create view examfinal_s3_v_info_parcelle as select ct.id_parcelle id_parcelle, ct.dt date, rt.rendement recolte, ct.poids cueillette, (rt.rendement - ct.poids) reste from examfinal_s3_v_cueillette_moisparcelle as ct join examfinal_s3_v_recolt_mois as rt on ct.id_parcelle = rt.num_parcelle;
-    -- view pour le reste par mois 
+
         create view examfinal_s3_v_info_parmois as select max(date) date, sum(recolte) recolte, sum(cueillette) cueillette, sum(reste) reste from examfinal_s3_v_info_parcelle group by month(date), year(date);
 
 
@@ -112,7 +92,7 @@ create table examfinal_s3_min_journalier (
     id_cueilleur int references examfinal_s3_cueilleur (id)
 );
 
-    -- VIEW depanse par mois sans preciser les categorie
+
     create view examfinal_s3_v_dep_parmois as select max(dt) dt, sum(montant) ttl_montant from examfinal_s3_depanse group by month(dt), year(dt);
     create view examfinal_s3_v_allinfo as 
     SELECT 
@@ -130,7 +110,15 @@ create table examfinal_s3_min_journalier (
         examfinal_s3_v_salaire_parmois AS sm ON MONTH(sm.dt) = MONTH(im.date)
     GROUP BY 
         MONTH(im.date), YEAR(im.date);
-    -- VIEW cout de revient par kilo
+
     
     create view examfinal_s3_v_cout_revient as select date, (ttl_montant + ttlsalaire) dep, cueillette, ((ttl_montant + ttlsalaire) / cueillette) cout_rev
     from examfinal_s3_v_allinfo as info;
+
+create table examfinal_s3_bonus_mallus (
+    bonus double,
+    mallus double
+);
+
+insert into examfinal_s3_admin values(null,'vallinah','vallinah@gmail.com','2000-12-21','F','val');
+insert into examfinal_s3_user values(null,'kiady','kiady@gmail.com','2000-12-21','M','ki');

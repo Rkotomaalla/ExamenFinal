@@ -1,5 +1,5 @@
 <?php
-    include('../../inc/fonctions/include.php');
+    // include('../../inc/fonctions/include.php');
     $all_cueilleur=array();
     $all_cueilleur=get_allCueilleur();
 ?>
@@ -11,9 +11,9 @@
                 <div class="theElement">
                     <img id="image" src="" alt="">
                     <div class="infoThe">
-                    <p class="nom"><?php echo $one_cueilleur['nom'];?></p>
-                    <p class="genre"><?php echo $one_cueilleur['genre'];?></p>
-                    <p class="date_naiss"><?php echo $one_cueilleur['date_naiss'];?></p>
+                    <p class="nom">Nom ceuilleur: <?php echo $one_cueilleur['nom'];?></p>
+                    <p class="genre">Genre: <?php echo $one_cueilleur['genre'];?></p>
+                    <p class="date_naiss">Date de naissance<?php echo $one_cueilleur['date_naiss'];?></p>
                     <p><button class="modify" data-id="<?php echo $one_cueilleur['id']; ?>">Modifier</button>
                     <img class="delete" src="../../assets/images/icon/supprimer.png" alt="" data-id="<?php echo $one_cueilleur['id']; ?>"></p>
                     </div>

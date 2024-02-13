@@ -1,5 +1,5 @@
 <?php
-    include('../../inc/fonctions/include.php');
+    // include('../../inc/fonctions/include.php');
     $all_salaire=array();
     $all_salaire=get_allSalaire();
 ?>
@@ -11,8 +11,8 @@
                 <div class="theElement">
                     <img id="image" src="" alt="">
                     <div class="infoThe">
-                    <h3 class="dt"><?php echo $one_salaire['dt'];?></h3>
-                    <p class="prix"><?php echo $one_salaire['prix'];?></p>
+                    <h3 class="dt">Date: <?php echo $one_salaire['dt'];?></h3>
+                    <p class="prix">Montant: <?php echo $one_salaire['prix'];?></p>
                     <p><button class="modify" data-id="<?php echo $one_salaire['id']; ?>">Modifier</button>
                     </div>
                 </div>

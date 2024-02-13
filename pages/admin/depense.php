@@ -1,5 +1,5 @@
 <?php
-    include('../../inc/fonctions/include.php');
+    // include('../../inc/fonctions/include.php');
     $all_depense=array();
     $all_depense=get_allCategDep();
 ?>
@@ -11,7 +11,7 @@
                 <div class="theElement">
                     <img id="image" src="" alt="">
                     <div class="infoThe">
-                    <p class="nom"><?php echo $one_depense['nom'];?></p>
+                    <p class="nom">nom depense: <?php echo $one_depense['nom'];?></p>
                     </div>
                 </div>
             <?php 

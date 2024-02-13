@@ -1,8 +1,8 @@
 <?php
     function connexion_bdd () {
-        $user = "root"; 
-        $mdp = ""; 
-        $bdd = "examfinal_s3";
+        $user = "ETU002505"; 
+        $mdp = "QsGh0G8zFoVR"; 
+        $bdd = "db_p16_ETU002505";
         
         static $connect = null; 
         if ($connect === null) {
