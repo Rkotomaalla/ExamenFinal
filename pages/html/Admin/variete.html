@@ -36,6 +36,7 @@
             <li><a href="">Deconnection</a></li>
         </ul>
     </div>
+<!-- katreto -->
     <script defer>
         var q=0;
         const menu=document.getElementsByClassName("menuBar")[0];
@@ -120,7 +121,6 @@
         </form>
     </div>
 
-<!-- ======================================================================================================================================= -->
 
 
 
@@ -133,7 +133,6 @@
             <li><a href="">Ceuilleurs</a></li>
             <li><a href="">Dépenses</a></li>
             <li><a href="">Salaires</a></li>
- <!--NOUVEAUUUU ================================================================  -->
             <li id="generate"> Mois de regeneration</li>
             <div id="regeneration_check">
                 
@@ -175,7 +174,6 @@
                     div_check.style.animationFillMode="Forwards";
         });
             </script>
- <!--NOUVEAUUUU ================================================================  -->
 
         </ul>
             
@@ -187,23 +185,19 @@
         var id=document.getElementById("add");
         id.addEventListener("click",function(){
             const div=document.getElementsByClassName("SettingDiv")[0];
-// div.style.display="flex"; fafanaaaaa
-// nouveauuuu
+
             div.style.display="flex";
             div.style.animationName="slideShow";
                     div.style.animationDuration="2s";
                     div.style.animationFillMode="Forwards";
-//katretoo
         });
         var cancel=document.getElementById("cancel");
         cancel.addEventListener("click",function(){
             const div=document.getElementsByClassName("SettingDiv")[0];
-  // div.style.display="none"; fafannaaa
-//nouveauuuuuuuu            
             div.style.animationName="slide";
             div.style.animationDuration="2s";
             div.style.animationFillMode="Forwards";
-// katreto
+
         });
 
 
@@ -213,25 +207,21 @@
         for(var i=0;i<ids.length;i++){
             ids[i].addEventListener("click",function(){
             const div=document.getElementsByClassName("ModifyDiv")[0];
-            // div.style.display="flex"; Fafana
-// nouveauuuu
             div.style.display="flex";
             div.style.animationName="slideShow";
             div.style.animationDuration="2s";
             div.style.animationFillMode="Forwards";
-// katreto
+
 
         });
         }
         var canceld=document.getElementById("cancelModify");
         canceld.addEventListener("click",function(){
             const div=document.getElementsByClassName("ModifyDiv")[0];
-            // div.style.display="none"; FAFANAAAA
-            //nouveauuuuuuuu            
             div.style.animationName="slide";
             div.style.animationDuration="2s";
             div.style.animationFillMode="Forwards";
-// katreto
+
 });
     </script>
 </body>
