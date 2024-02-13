@@ -1,6 +1,4 @@
-<?php
-
-     
+<?php     
     function insert_cueilleur ($nom, $genre, $date_naiss) {
         $connexion = connexion_bdd ();
         $requete = sprintf("INSERT into examfinal_s3_cueilleur (nom, genre, date_naiss) values ('%s', '%s', '%s')", $nom, $genre, $date_naiss);

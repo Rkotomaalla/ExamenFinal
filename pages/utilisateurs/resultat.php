@@ -50,10 +50,10 @@
     function getTotalCueillis(date1,date2){ 
         var xhr = getXHR();
         xhr.addEventListener("load", function(event) {
-            var reponse = JSON.parse(xhr.responseText);
+            var reponse = xhr.responseText;
             var tout = document.getElementById("total");
-            tout.value = reponse['ttl_cueille'];
-            console.log(reponse['ttl_cueille']);
+            tout.textContent = reponse;
+            console.log(reponse);
         });
 
         // Definissez ce qui se passe en cas d'erreur
@@ -70,10 +70,10 @@
     function getTotalPoidsRestant(date1,date2){ 
         var xhr = getXHR();
         xhr.addEventListener("load", function(event) {
-            var reponse = JSON.parse(xhr.responseText);
+            var reponse = xhr.responseText;
             var tout = document.getElementById("poids");
-            tout.textContent = reponse['reste'];
-            console.log(reponse['reste']);
+            tout.textContent = reponse;
+            console.log(reponse);
         });
 
         // Definissez ce qui se passe en cas d'erreur
@@ -94,7 +94,7 @@
         xhr.addEventListener("load", function(event) {
             // console.log(xhr.responseText);
             var reponse = xhr.responseText;
-            var tout = document.getElementById("total");
+            var tout = document.getElementById("cout");
             tout.textContent = reponse;
             console.log(reponse);
         });

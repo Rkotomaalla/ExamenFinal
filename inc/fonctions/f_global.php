@@ -46,7 +46,7 @@
         }
         mysqli_free_result($donnee);
         mysqli_close($connexion);
-        return $liste_restant_parParcelle;
+        return $recolte_parMois;
     }
 
     function get_cout_revient_parMois ($date_debut, $date_fin) {

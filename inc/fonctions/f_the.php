@@ -2,9 +2,9 @@
 
     // include ('connexion.php');
 
-    function insert_the ($nom, $occupation, $rendement) {
+    function insert_the ($nom, $occupation, $rendement,$prix_vente) {
         $connexion = connexion_bdd ();
-        $requete = sprintf("INSERT into examfinal_s3_the (nom, occupation, rendement) values ('%s', %f, %f)", $nom, $occupation, $rendement);
+        $requete = sprintf("INSERT into examfinal_s3_the (nom, occupation, rendement,prix_vente) values ('%s', %f, %f,%f)", $nom, $occupation, $rendement,$prix_vente);
         if (mysqli_query($connexion, $requete)) {
             $res = array('retour' => true);
         } else {
@@ -30,9 +30,9 @@
 
     }
 
-    function modifier_the ($id, $nom, $occupation, $rendement) {
+    function modifier_the ($id, $nom, $occupation, $rendement,$prix_vente) {
         $connexion = connexion_bdd ();
-        $requete = sprintf("UPDATE examfinal_s3_the SET nom = '%s', occupation = %f, rendement = %f where id = %d", $nom, $occupation, $rendement, $id);
+        $requete = sprintf("UPDATE examfinal_s3_the SET nom = '%s', occupation = %f, rendement = %f,prix_vente= %f where id = %d", $nom, $occupation, $rendement,$prix_vente, $id);
         if (mysqli_query($connexion, $requete)) {
             $res = array('retour' => true);
         } else {

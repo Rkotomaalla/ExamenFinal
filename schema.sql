@@ -21,17 +21,22 @@ create table examfinal_s3_user (
     mdp varchar (10) not null -- 10 caracteres maximum
 );
 
+insert into examfinal_s3_user (nom, email, date_naiss, genre, mdp)
+values ('fefjoiej', 'kiady@gmail.com', '2004-10-01', 'f', 'ki');
+
 create table examfinal_s3_the (
     id int primary key AUTO_INCREMENT,
     nom varchar (100) not null,
     occupation double, -- espace occupé par un pied
-    rendement double -- rendement de feuilles par mois (kg)
+    rendement double, -- rendement de feuilles par mois (kg)
+    prix_vente double
 );
+
 
 -- VIEW pour la recolt par parcelle par mois (view entre la table the et la table parcelle)
     create view examfinal_s3_v_recolt_mois as select p.num_parcelle num_parcelle, (p.surface * 10000) surf_m2, ((p.surface * 10000 * t.rendement)/t.occupation) rendement from examfinal_s3_parcelle as p join examfinal_s3_the as t on p.id_the = t.id;
     /*
-    recolte par mois
+    recolte par mois,
         - num parcelle 
         - surf_m2 (surface en m²)
         - rendement (total par parcelle)
@@ -45,11 +50,12 @@ create table examfinal_s3_parcelle (
 );
 
 create table examfinal_s3_cueilleur (
-    id int primary key AUTO_INCREMENT,
+    id int primary key AUTO_INCREMENT, 
     nom varchar (100) not null,
     genre char (1) not null, -- m || f
     date_naiss date
 );
+
 
 create table examfinal_s3_categ_dep (
     id int primary key AUTO_INCREMENT,
@@ -76,6 +82,9 @@ create table examfinal_s3_cueillette (
     poids double not null
 );
 
+insert into  examfinal_s3_cueillette (dt, id_cueilleur, id_parcelle, poids)
+values ('2024-08-30', 2, 2, 46580);
+
     -- VIEW pour la somme de cueillette par parcelle
         create view examfinal_s3_v_cueillette_moisparcelle as select id_parcelle, max(dt) dt, sum(poids) poids from examfinal_s3_cueillette group by id_parcelle, month(dt), year(dt);
     -- view pour le reste par parcelle 
@@ -90,6 +99,18 @@ create table examfinal_s3_depanse (
     id_dep_categ int references examfinal_s3_categ_dep (id),
     montant double not null
 ); 
+
+CREATE TABLE examfinal_s3_regeneration (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    mois INT NOT NULL
+);
+
+create table examfinal_s3_min_journalier (
+    id int primary key AUTO_INCREMENT,
+    dt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    min double not null,
+    id_cueilleur int references examfinal_s3_cueilleur (id)
+);
 
     -- VIEW depanse par mois sans preciser les categorie
     create view examfinal_s3_v_dep_parmois as select max(dt) dt, sum(montant) ttl_montant from examfinal_s3_depanse group by month(dt), year(dt);
@@ -113,4 +134,3 @@ create table examfinal_s3_depanse (
     
     create view examfinal_s3_v_cout_revient as select date, (ttl_montant + ttlsalaire) dep, cueillette, ((ttl_montant + ttlsalaire) / cueillette) cout_rev
     from examfinal_s3_v_allinfo as info;
-

@@ -1,5 +1,4 @@
 <?php
-
     include ('connexion.php');
     include ('f_the.php');
     include ('f_salaire.php');
@@ -8,4 +7,5 @@
     include ('f_categorie_depanse.php');
     include ('function.php');
     include ('f_global.php');
+    include ('f_regeneration.php');
 ?>
