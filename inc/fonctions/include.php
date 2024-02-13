@@ -7,4 +7,5 @@
     include ('f_parcelle.php');
     include ('f_categorie_depanse.php');
     include ('function.php');
+    include ('f_global.php');
 ?>

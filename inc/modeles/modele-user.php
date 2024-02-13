@@ -4,6 +4,7 @@
     $liste_cueilleurs = get_allCueilleur ();
     $liste_parcelles = get_allparcelle ();
     $liste_categ_dep = get_allCategDep ();
+    $page="../../pages/utilisateurs/".$_GET['page'].".php";
 
 ?>
 <!DOCTYPE html>
@@ -24,7 +25,7 @@
                 <ul>
                     <li><a href="#Ceuillete">Ceuillete</a></li>
                     <li><a href="#Depenses">Depenses</a></li>
-                    <li><a href="">Resultat</a></li>
+                    <li><a href="modele-user.php?page=resultat">Resultat</a></li>
                 </ul>
             </nav>
             <ul class="userInfo">
@@ -52,12 +53,9 @@
             </ul>
         </div>
         <!-- ================================================ -->
-        <div class="contains_user">
-            <div>
-                <h3>Votre Thé tsy aiko tsony</h3>
-                <p>sentez sa pureté</p>
-            </div>
-        </div>
+        <?php
+        include($page);
+        ?>
     </div>
     <div id="theList">
         <p id="title">our list</p>
