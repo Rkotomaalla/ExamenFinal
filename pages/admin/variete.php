@@ -1,5 +1,5 @@
 <?php
-    include('../../inc/fonctions/include.php');
+    // include('../../inc/fonctions/include.php');
     $all_variete=array();
     $all_variete=get_allthe();
 ?>
@@ -14,6 +14,7 @@
                     <h3 class="nom"><?php echo $one_variete['nom'];?></h3>
                     <p class="occupation"><?php echo $one_variete['occupation'];?></p>
                     <p class="rendement"><?php echo $one_variete['rendement'];?></p>
+                    <p class="prix_vente"><?php echo $one_variete['prix_vente'];?></p>
                     <p><button class="modify" data-id="<?php echo $one_variete['id']; ?>">Modifier</button>
                     <img class="delete" src="../../assets/images/icon/supprimer.png" alt="" data-id="<?php echo $one_variete['id']; ?>"></p>
                     </div>
@@ -31,6 +32,7 @@
             <input type="text" name="nomAjout" id="NomVariete" placeholder="Nom du variete" required>
             <input type="double" name="occupationAjout" id="" placeholder="Place Occupée" required>
             <input type="double" name="rendementAjout" id="" placeholder="Rendement par mois" required>
+            <input type="double" name="prix_venteAjout" id="" placeholder="Prix de vente" required>
             <input type="submit" value="ajouter">
         </form>
     </div>
@@ -45,6 +47,7 @@
             <input type="text" id="nom_modif" name="nom_modif" placeholder="Nom du variete" required>
             <input type="double" name="occupation_modif" id="occupation_modif" placeholder="Place Occupée" required>
             <input type="double" name="rendement_modif" id="rendement_modif" placeholder="Rendement par mois" required>
+            <input type="double" name="prix_vente_modif" id="prix_vente_modif" placeholder="prix_vente" required>
             <input type="submit" value="modifier">
         </form>
     </div>
@@ -67,7 +70,7 @@
     var nomAll = document.getElementsByClassName("nom");
     var occupationAll = document.getElementsByClassName("occupation");
     var rendementAll = document.getElementsByClassName("rendement");
-
+    var prix_venteAll = document.getElementsByClassName("prix_vente");
     for (var i = 0; i < ids.length; i++) {
         (function(index) {
             ids[index].addEventListener("click", function() {
@@ -86,6 +89,9 @@
                 var rendement = document.getElementById("rendement_modif");
                 rendement.value = rendementAll[index].textContent; // Accédez au contenu texte de l'élément
 
+                var prix_vente = document.getElementById("prix_vente_modif");
+                prix_vente.value = prix_venteAll[index].textContent; // Accédez au contenu texte de l'élément
+
                 div.style.display = "flex";
             });
         })(i);
@@ -99,9 +105,9 @@
         });
     });
 
-    // var canceld=document.getElementById("cancelModify");
-    // canceld.addEventListener("click",function(){
-    //     const div=document.getElementsByClassName("ModifyDiv")[0];
-    //     div.style.display="none";
-    // });
+    var canceld=document.getElementById("cancelModify");
+    canceld.addEventListener("click",function(){
+        const div=document.getElementsByClassName("ModifyDiv")[0];
+        div.style.display="none";
+    });
 </script>
