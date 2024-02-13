@@ -36,7 +36,7 @@
             <li><a href="">Deconnection</a></li>
         </ul>
     </div>
-<!-- katreto -->
+
     <script defer>
         var q=0;
         const menu=document.getElementsByClassName("menuBar")[0];
@@ -52,6 +52,8 @@
             }
         });
     </script>
+
+<!-- katreto -->
 <!-- =========================================================== -->
 <!-- contenu Miovahovaa -->
 
@@ -117,6 +119,9 @@
             <input type="text" id="NomVariete" placeholder="Nom du variete" required>
             <input type="number" name="" id="" placeholder="Place Occupée" required>
             <input type="number" name="" id="" placeholder="Rendement par mois" required>
+<!-- NOUVEAUUUUUUUUUUUUUUUUUUUUUUUUUU -->
+            <input type="number" step="any" placeholder="Prix du thé">
+<!-- katreto -->
             <input type="submit" value="modifier">
         </form>
     </div>
@@ -134,6 +139,38 @@
             <li><a href="">Dépenses</a></li>
             <li><a href="">Salaires</a></li>
             <li id="generate"> Mois de regeneration</li>
+<!-- NOUVEAUUUUUUUU ============================================================= -->
+            <li id="configurations">Configurations</li>
+            <div id="configuration">
+                <form action="" >
+                    <img src="../../../assets/images/icon/marque-de-croix.png" alt="" id="cancelconfiguration">
+                    <p>Configurations</p>
+                    <input type="double" id="" placeholder="poids minimal pour un ceuileur" required>
+                    <input type="double" name="" id="" placeholder="% de bonus" required>
+                    <input type="double" name="" id="" placeholder="% de mallus" required>
+                    <input type="submit" value="configurer">
+                </form>
+            </div>
+            <script defer>
+                const generateConf=document.getElementById("configurations");
+                    generateConf.addEventListener("click",function(){
+                    const div_check=document.getElementById("configuration");
+                    div_check.style.display="flex";
+                    
+                    div_check.style.animationName="slideShow";
+                    div_check.style.animationDuration="2s";
+                    div_check.style.animationFillMode="Forwards";
+                });
+                const cancelConf=document.getElementById("cancelconfiguration");
+                cancelConf.addEventListener("click",function(){
+                    const div_check=document.getElementById("configuration");
+                    div_check.style.animationName="slide";
+                    div_check.style.animationDuration="2s";
+                    div_check.style.animationFillMode="Forwards";
+        });
+            </script>
+            
+<!-- katreto -->
             <div id="regeneration_check">
                 
                 <form action="">
