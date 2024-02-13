@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <header id="header_login">
+        <div class="logo">
+            <p><strong>G</strong>reen <strong>T</strong>ea</p>
+        </div>
+        
+        <div class="btns">
+            <!-- <button value="" id="loginBtn">Login</button>
+            <button id="SignUpBtn">Sign up</button> -->
+        </div>
+    </header>
+    <div class="login_contains">
+        <div class="login">
+            <p id="greet">Welcome to the lorem umpsum</p>
+<!-- Eto ny atao ny connexion login -->
+            <form action="" class="login_form" id="form">
+                <label for="Email">E-mail</label>
+                <input type="email" name="email" id="email" required placeholder="" value="">
+                <label for="Password">Password</label>
+                <input type="password" name="password" id="password" required placeholder="">
+                <label for="">Connection en tant que:</label>
+                <label for="Admin">Administrateur <input type="radio" name="admin-user" id="isAdmin" value="true"></label>
+                <label for="User">Utilisateur <input type="radio" name="admin-user" id="isUser" value="false"></label>
+                
+<!-- Eto no atao meesage d erreur avy am js -->
+                <p id="error"></p>
+                <input type="submit" value="Se Connecter">
+            </form>
+        </div>
+    </div>
+    <footer>
+<!-- eto ny footer -->
+        <p>Vallinah ETU002380 - Sarobidy ETU002491 - Kiady ETU002505</p>
+    </footer>
+</body>
+<script>
+    function getXHR() {
+        var xhr; 
+        try {  xhr = new ActiveXObject('Msxml2.XMLHTTP');   }
+        catch (e) 
+        {
+            try {   xhr = new ActiveXObject('Microsoft.XMLHTTP'); }
+            catch (e2) 
+            {
+            try {  xhr = new XMLHttpRequest();  }
+            catch (e3) {  xhr = false;   }
+            }
+        }
+        return xhr;
+    }
+
+    function submitForm(){ 
+        var xhr = getXHR();
+        var formdata = new FormData(form) ;
+        // Définissez ce qui se passe si la soumission s'est opérée avec succès
+        xhr.addEventListener("load", function(event) {
+            // console.log(xhr.responseText);
+            var reponse = JSON.parse(xhr.responseText);
+            console.log(reponse['retour']);
+            if (reponse['retour'] === 1) {
+                window.location.replace("inc/modeles/modele-admin.php?page=variete");
+            }
+            else if(reponse['retour'] === 0) {
+                window.location.replace("inc/modeles/modele-user.php");
+            }
+            else{
+                var erreur = document.getElementById("error");
+                erreur.textContent = "L'email ou le mots de passe sont incorrectes, veuillez reessayer";
+                console.log("L'email ou le mots de passe sont incorrectes, veuillez reessayer");
+            }
+        });
+
+        // Definissez ce qui se passe en cas d'erreur
+        xhr.addEventListener("error", function(event) {
+            alert('Oups! Quelque chose s\'est mal passé.');
+        });
+        
+        // Configurez la requête
+        xhr.open("POST", "pages/traitements/traitement-login.php"); 
+
+        // Les données envoyées sont ce que l'utilisateur a mis dans le formulaire
+        xhr.send(formdata); 
+    }
+
+    // Sélectionnez tous les boutons radio dans le groupe
+    var radios = document.querySelectorAll('input[type="radio"][name="admin-user"]');
+
+    // Parcourez chaque bouton radio et ajoutez un gestionnaire d'événements "click"
+    radios.forEach(function(radio) {
+        radio.addEventListener('click', function() {
+            // Vérifiez si le bouton radio est sélectionné
+            if (radio.checked) {
+                console.log("Bouton radio sélectionné : " + radio.value);
+                // Vous pouvez effectuer d'autres actions ici
+                const email = document.getElementById("email");
+                const mdp = document.getElementById("password");
+                if (radio.value=="true") {
+                    email.value = "vallinah@gmail.com";
+                    mdp.value = "val";
+                    
+                }else{
+                    email.value = "kiady@gmail.com";
+                    mdp.value = "ki";
+                }
+            }
+        });
+    });
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); // évite de faire le submit par défaut
+        submitForm();
+    });
+
+    window.addEventListener("load", function () {
+        var form = document.getElementById("form");
+        const email = document.getElementById("email");
+        const mdp = document.getElementById("password");
+        email.value = "kiady@gmail.com";
+        mdp.value = "ki";
+        document.getElementById("isUser").checked = true;
+    });
+
+</script>
+</html>
