@@ -7,21 +7,97 @@ To do :
     - fonction (Model)
     - donnee (sql)
     - integration
+        - prendre l'email et le mots de passe par defaut selon le type
         - action formulaire (traitement login)
+            - if(1) 
+                => admin
+            - if(0)
+                => utilisateur
+            - else => index,erreur
 - traitement-login
     - affichage (view)
     - fonction (Model)
         - login(login , mot de passe , isAdmin) return 1,0,-1
+        - log-admin(requette)
+        - log-simple(requette)
     - donnee (sql)
         - utilisateur (id , login , nom , mot de passe , date naissance)
         - admin (id , login , nom , mot de passe , date naissance)
     - integration
         - recuperer login , mot de passe , isAdmin
         - appeler fonction login(login , mot de passe , isAdmin)
-        - retour fonction login :
+        - retour fonction log-admin :
             - if(1) 
                 => admin
-            - if(0)
-                => utilisateur
-            - else => index,erreur
+            - if(-1)
+                => non admin
+        - retour fonction log-simple :
+            - if(0) 
+                => simple user
+            - if(-1)
+                => non simple user
 - page admin
+    - Gestion de variété de thé
+        - affichage (view)
+            - tableau liste des variété avec bouton suppression, modification et insertion
+        - fonction (Model)
+            - suppression
+            - modification
+            - insertion
+            - getAllVariete()
+        - donnee (sql)
+            - variété (id , nom , occupation , rendement)
+        - integration
+            - appeler les fonctions de suppression et modification si on touche au bouton respective
+            - appeler la fonction getAllVariete()
+    - Gestion des parcelles
+        - affichage (view)
+            - tableau liste des parcelles avec bouton suppression, modification et insertion
+        - fonction (Model)
+            - suppression
+            - modification
+            - insertion
+            - getAllParcelles()
+        - donnee (sql)
+            - parcelle(num , surface , id_the)
+        - integration
+            - appeler les fonctions de suppression et modification si on touche au bouton respective
+            - appeler la fonction getAllParcelles()
+    - Gestion des cueilleurs
+        - affichage (view)
+            - tableau liste des cueilleurs avec bouton suppression, modification et insertion
+        - fonction (Model)
+            - suppression
+            - modification
+            - insertion
+            - getAllCueilleurs()
+        - donnee (sql)
+            - cueilleurs (id , nom , genre , date naissance)
+        - integration
+            - appeler les fonctions de suppression et modification si on touche au bouton respective
+            - appeler la fonction getAllCueilleurs()
+    - Gestion des catégories de dépenses
+        - affichage (view)
+            - tableau liste des dépenses avec bouton suppression, modification et insertion
+        - fonction (Model)
+            - suppression
+            - modification
+            - insertion
+            - getAllDepenses()
+        - donnee (sql)
+            - categ_dep (id , nom)
+        - integration
+            - appeler les fonctions de suppression et modification si on touche au bouton respective
+            - appeler la fonction getAllDepenses()
+    - Configuration montant salaire par kg des cueilleurs
+        - affichage (view)
+            - tableau liste des  avec bouton suppression, modification et insertion
+        - fonction (Model)
+            - suppression
+            - modification
+            - insertion
+            - login(login , mot de passe , isAdmin) return 1,0,-1
+        - donnee (sql)
+            - utilisateur (id , login , nom , mot de passe , date naissance)
+            - admin (id , login , nom , mot de passe , date naissance)
+        - integration
